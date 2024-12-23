@@ -63,10 +63,8 @@ export const useAppStore = defineStore('app', () => {
     themeConfig.algorithm = algorithm
   }
   const toggleTheme = (theme: ThemeType) => {
-    toggleCompact(layoutSetting.compactAlgorithm)
-    if (layoutSetting.theme === theme)
-      return
     layoutSetting.theme = theme
+    toggleCompact(layoutSetting.compactAlgorithm)
     if (theme === 'light' || theme === 'inverted') {
       if (themeConfig.token)
         themeConfig.token.colorBgContainer = '#fff'
